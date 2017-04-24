@@ -1,0 +1,1043 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/flatiron/cliff"
+
+    >cliff (v0.1.10)</a>
+</h1>
+<h4>Your CLI formatting friend.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cliff">module cliff</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.arrayLengths">
+            function <span class="apidocSignatureSpan">cliff.</span>arrayLengths
+            <span class="apidocSignatureSpan">(arrs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.columnMajor">
+            function <span class="apidocSignatureSpan">cliff.</span>columnMajor
+            <span class="apidocSignatureSpan">(rows)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.extractFrom">
+            function <span class="apidocSignatureSpan">cliff.</span>extractFrom
+            <span class="apidocSignatureSpan">(obj, properties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.inspect">
+            function <span class="apidocSignatureSpan">cliff.</span>inspect
+            <span class="apidocSignatureSpan">(obj, label, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.inspector">
+            function <span class="apidocSignatureSpan">cliff.</span>inspector
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.putObject">
+            function <span class="apidocSignatureSpan">cliff.</span>putObject
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.putObjectRows">
+            function <span class="apidocSignatureSpan">cliff.</span>putObjectRows
+            <span class="apidocSignatureSpan">(level, objs, properties, colors)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.putRows">
+            function <span class="apidocSignatureSpan">cliff.</span>putRows
+            <span class="apidocSignatureSpan">(level, rows, colors)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.rowifyObjects">
+            function <span class="apidocSignatureSpan">cliff.</span>rowifyObjects
+            <span class="apidocSignatureSpan">(objs, properties, colors, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.stringifyLiteral">
+            function <span class="apidocSignatureSpan">cliff.</span>stringifyLiteral
+            <span class="apidocSignatureSpan">(literal)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.stringifyObjectRows">
+            function <span class="apidocSignatureSpan">cliff.</span>stringifyObjectRows
+            <span class="apidocSignatureSpan">(objs, properties, colors, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.stringifyRows">
+            function <span class="apidocSignatureSpan">cliff.</span>stringifyRows
+            <span class="apidocSignatureSpan">(rows, colors, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.typeOf">
+            function <span class="apidocSignatureSpan">cliff.</span>typeOf
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cliff.</span>logger</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cliff.logger">module cliff.logger</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cliff.logger.</span>emitErrs</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cliff.logger.</span>exitOnError</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cliff.logger.</span>padLevels</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cliff.logger.</span>stripColors</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.logger.data">
+            function <span class="apidocSignatureSpan">cliff.logger.</span>data
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.logger.debug">
+            function <span class="apidocSignatureSpan">cliff.logger.</span>debug
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.logger.error">
+            function <span class="apidocSignatureSpan">cliff.logger.</span>error
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.logger.help">
+            function <span class="apidocSignatureSpan">cliff.logger.</span>help
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.logger.info">
+            function <span class="apidocSignatureSpan">cliff.logger.</span>info
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.logger.input">
+            function <span class="apidocSignatureSpan">cliff.logger.</span>input
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.logger.prompt">
+            function <span class="apidocSignatureSpan">cliff.logger.</span>prompt
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.logger.silly">
+            function <span class="apidocSignatureSpan">cliff.logger.</span>silly
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.logger.verbose">
+            function <span class="apidocSignatureSpan">cliff.logger.</span>verbose
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cliff.logger.warn">
+            function <span class="apidocSignatureSpan">cliff.logger.</span>warn
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">cliff.logger.</span>_eventsCount</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">cliff.logger.</span>levelLength</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cliff.logger.</span>_events</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cliff.logger.</span>_hnames</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cliff.logger.</span>_names</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cliff.logger.</span>domain</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cliff.logger.</span>exceptionHandlers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cliff.logger.</span>levels</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cliff.logger.</span>profilers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cliff.logger.</span>rewriters</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cliff.logger.</span>transports</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cliff.logger.</span>level</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cliff" id="apidoc.module.cliff">module cliff</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.arrayLengths" id="apidoc.element.cliff.arrayLengths">
+        function <span class="apidocSignatureSpan">cliff.</span>arrayLengths
+        <span class="apidocSignatureSpan">(arrs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">arrayLengths = function (arrs) {
+  var i, lengths = [];
+  for (i = 0; i &#x3c; arrs.length; i += 1) {
+    lengths.push(longestElement(arrs[i].map(cliff.stringifyLiteral)));
+  }
+  return lengths;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.columnMajor" id="apidoc.element.cliff.columnMajor">
+        function <span class="apidocSignatureSpan">cliff.</span>columnMajor
+        <span class="apidocSignatureSpan">(rows)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">columnMajor = function (rows) {
+  var columns = [];
+
+  rows.forEach(function (row) {
+    for (var i = 0; i &#x3c; row.length; i += 1) {
+      if (!columns[i]) {
+        columns[i] = [];
+      }
+
+      columns[i].push(row[i]);
+    }
+  });
+
+  return columns;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.extractFrom" id="apidoc.element.cliff.extractFrom">
+        function <span class="apidocSignatureSpan">cliff.</span>extractFrom
+        <span class="apidocSignatureSpan">(obj, properties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extractFrom = function (obj, properties) {
+  return properties.map(function (p) {
+    return obj[p];
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.inspect" id="apidoc.element.cliff.inspect">
+        function <span class="apidocSignatureSpan">cliff.</span>inspect
+        <span class="apidocSignatureSpan">(obj, label, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inspect = function (obj, label, opts) {
+    return that.inspect.call(that, obj, label,
+        merge(options || {}, opts || {}));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The resulting output on the command-line would be:
+
+![output from puts-rows-colors.js][put-rows-colors]
+
+### Inspecting Objects
+
+**cliff.<span class="apidocCodeKeywordSpan">inspect</span>(obj)**
+
+The `inspect` method is a lightweight wrapper to a pre-configured [eyes][1] inspector. If you wish to change the coloring of objects
+ that are logged using `cliff` you only need to override `cliff.inspect` with a new [eyes][1] inspector. Here is how to use it:
+
+``` js
+var cliff = require(&#x27;../lib/cliff&#x27;);
+
+console.log(cliff.inspect({
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.inspector" id="apidoc.element.cliff.inspector">
+        function <span class="apidocSignatureSpan">cliff.</span>inspector
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inspector = function (options) {
+    var that = this;
+    return function (obj, label, opts) {
+        return that.inspect.call(that, obj, label,
+            merge(options || {}, opts || {}));
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.putObject" id="apidoc.element.cliff.putObject">
+        function <span class="apidocSignatureSpan">cliff.</span>putObject
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">putObject = function () {
+  var args = Array.prototype.slice.call(arguments),
+      obj = args.shift(),
+      padding = typeof args[args.length - 1] === &#x27;number&#x27; &#x26;&#x26; args.pop(),
+      rewriters = typeof args[args.length -1] === &#x27;object&#x27; &#x26;&#x26; args.pop(),
+      keys = Object.keys(obj).sort(),
+      sorted = {},
+      matchers = {},
+      inspected;
+
+  padding = padding || 0;
+  rewriters = rewriters || {};
+
+  function pad () {
+    for (var i = 0; i &#x3c; padding / 2; i++) {
+      logger.data(&#x27;&#x27;);
+    }
+  }
+
+  keys.forEach(function (key) {
+    sorted[key] = obj[key];
+  });
+
+  inspected = cliff.inspect(sorted);
+
+  Object.keys(rewriters).forEach(function (key) {
+    matchers[key] = new RegExp(key);
+  });
+
+  pad();
+  inspected.split(&#x27;\n&#x27;).forEach(function (line) {
+    Object.keys(rewriters).forEach(function (key) {
+      if (matchers[key].test(line)) {
+        line = rewriters[key](line);
+      }
+    });
+    logger.data(line);
+  });
+  pad();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      }
+    }
+  }));
+```
+
+![output from inspect.js][inspect]
+
+**cliff.<span class="apidocCodeKeywordSpan">putObject</span>(obj, [rewriters, padding])**
+
+The `putObject` method is a simple helper function for prefixing and styling inspected object output from [eyes][1]. Here&#x27;s
+ a quick sample:
+
+``` js
+var cliff = require(&#x27;cliff&#x27;);
+
+cliff.putObject({
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.putObjectRows" id="apidoc.element.cliff.putObjectRows">
+        function <span class="apidocSignatureSpan">cliff.</span>putObjectRows
+        <span class="apidocSignatureSpan">(level, objs, properties, colors)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">putObjectRows = function (level, objs, properties, colors) {
+  cliff.rowifyObjects(objs, properties, colors).split(&#x27;\n&#x27;).forEach(function (str) {
+    logger.log(level, str);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+console.log(cliff.stringifyObjectRows(objs, [&#x27;id&#x27;, &#x27;name&#x27;, &#x27;address&#x27;], [&#x27;red&#x27;, &#x27;blue
+&#x27;, &#x27;green&#x27;]));
+```
+
+![output from string-object-rows.js][string-object-rows]
+
+**cliff.<span class="apidocCodeKeywordSpan">putObjectRows</span>(level, objs, properties[, colors])**
+
+Takes a set of Objects and the properties to extract from them and it will log to the console. (it prints `stringifyObjectRows`
+with [winston][0]). Here&#x27;s a sample:
+
+``` js
+var cliff = require(&#x27;../lib/cliff&#x27;);
+
+var objs = [], obj = {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.putRows" id="apidoc.element.cliff.putRows">
+        function <span class="apidocSignatureSpan">cliff.</span>putRows
+        <span class="apidocSignatureSpan">(level, rows, colors)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">putRows = function (level, rows, colors) {
+  cliff.stringifyRows(rows, colors).split(&#x27;\n&#x27;).forEach(function (str) {
+    logger.log(level, str);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+];
+
+console.log(cliff.stringifyRows(rows, [&#x27;red&#x27;, &#x27;blue&#x27;, &#x27;green&#x27;]));
+```
+
+![output from string-rows.js][string-rows]
+
+**cliff.<span class="apidocCodeKeywordSpan">putRows</span>(level, rows[, colors])**
+
+The `putRows` method is a simple helper that takes a set of Arrays and row headers and logs properly formatted and padded rows (
+logs `stringifyRows` to [winston][0]). Here&#x27;s a quick sample:
+
+``` js
+var cliff = require(&#x27;../lib/cliff&#x27;);
+
+var rows = [
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.rowifyObjects" id="apidoc.element.cliff.rowifyObjects">
+        function <span class="apidocSignatureSpan">cliff.</span>rowifyObjects
+        <span class="apidocSignatureSpan">(objs, properties, colors, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rowifyObjects = function (objs, properties, colors, options) {
+  var rows = [properties].concat(objs.map(function (obj) {
+    return cliff.extractFrom(obj, properties);
+  }));
+
+  return cliff.stringifyRows(rows, colors, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+The resulting output on the command-line would be:
+
+![output from put-rows.js][put-rows]
+
+**cliff.stringifyObjectRows(objs, properties[, colors])**
+*used to be: cliff.<span class="apidocCodeKeywordSpan">rowifyObjects</span>(objs, properties, colors)*
+
+Takes a set of Objects and the properties to extract from them and returns properly formatted and padded rows. Here&#x27;s a sample
+:
+
+``` js
+var cliff = require(&#x27;../lib/cliff&#x27;);
+
+var objs = [], obj = {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.stringifyLiteral" id="apidoc.element.cliff.stringifyLiteral">
+        function <span class="apidocSignatureSpan">cliff.</span>stringifyLiteral
+        <span class="apidocSignatureSpan">(literal)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stringifyLiteral(literal) {
+  switch (cliff.typeOf(literal)) {
+    case &#x27;number&#x27;   : return literal + &#x27;&#x27;;
+    case &#x27;null&#x27;     : return &#x27;null&#x27;;
+    case &#x27;undefined&#x27;: return &#x27;undefined&#x27;;
+    case &#x27;boolean&#x27;  : return literal + &#x27;&#x27;;
+    default         : return literal;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.stringifyObjectRows" id="apidoc.element.cliff.stringifyObjectRows">
+        function <span class="apidocSignatureSpan">cliff.</span>stringifyObjectRows
+        <span class="apidocSignatureSpan">(objs, properties, colors, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stringifyObjectRows = function (objs, properties, colors, options) {
+  var rows = [properties].concat(objs.map(function (obj) {
+    return cliff.extractFrom(obj, properties);
+  }));
+
+  return cliff.stringifyRows(rows, colors, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+cliff.putRows(&#x27;data&#x27;, rows, [&#x27;red&#x27;, &#x27;blue&#x27;, &#x27;green&#x27;]);
+```
+
+The resulting output on the command-line would be:
+
+![output from put-rows.js][put-rows]
+
+**cliff.<span class="apidocCodeKeywordSpan">stringifyObjectRows</span>(objs, properties[, colors])**
+*used to be: cliff.rowifyObjects(objs, properties, colors)*
+
+Takes a set of Objects and the properties to extract from them and returns properly formatted and padded rows. Here&#x27;s a sample
+:
+
+``` js
+var cliff = require(&#x27;../lib/cliff&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.stringifyRows" id="apidoc.element.cliff.stringifyRows">
+        function <span class="apidocSignatureSpan">cliff.</span>stringifyRows
+        <span class="apidocSignatureSpan">(rows, colors, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stringifyRows = function (rows, colors, options) {
+  var lengths, columns, output = [], headers;
+
+  options = options || {};
+  options.columnSpacing = options.columnSpacing || 2;
+
+  columns = cliff.columnMajor(rows);
+  lengths = cliff.arrayLengths(columns);
+
+  function stringifyRow(row, colorize) {
+    var rowtext = &#x27;&#x27;, padding, item, i, length;
+    for (i = 0; i &#x3c; row.length; i += 1) {
+      item = cliff.stringifyLiteral(row[i]);
+
+      if(colorize) {
+        item = item[colors[i]] || item[colors[colors.length -1]] || item;
+      }
+
+      length = realLength(item);
+      padding = length &#x3c; lengths[i] ? lengths[i] - length + options.columnSpacing  : options.columnSpacing ;
+      rowtext += item + new Array(padding).join(&#x27; &#x27;);
+    }
+
+    output.push(rowtext);
+  }
+
+  // If we were passed colors, then assume the first row
+  // is the headers for the rows
+  if (colors) {
+    headers = rows.splice(0, 1)[0];
+    stringifyRow(headers, true);
+  }
+
+  rows.forEach(function (row) {
+    stringifyRow(row, false);
+  });
+
+  return output.join(&#x27;\n&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+There are a number of methods available in Cliff for common logging tasks in command-line tools. If you&#x27;re looking for more
+ usage, checkout the [examples in this repository][3]:
+
+1. Logging rows of data
+2. Inspecting Objects
+
+### Logging rows of data
+
+**cliff.<span class="apidocCodeKeywordSpan">stringifyRows</span>(rows[, colors])**
+
+Takes a set of Arrays and row headers and returns properly formatted and padded rows. Here&#x27;s a sample:
+
+``` js
+var cliff = require(&#x27;../lib/cliff&#x27;);
+
+var rows = [
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.typeOf" id="apidoc.element.cliff.typeOf">
+        function <span class="apidocSignatureSpan">cliff.</span>typeOf
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function typeOf(value) {
+  var s = typeof(value),
+      types = [Object, Array, String, RegExp, Number, Function, Boolean, Date];
+
+  if (s === &#x27;object&#x27; || s === &#x27;function&#x27;) {
+    if (value) {
+      types.forEach(function (t) {
+        if (value instanceof t) {
+          s = t.name.toLowerCase();
+        }
+      });
+    } else {
+      s = &#x27;null&#x27;;
+    }
+  }
+
+  return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cliff.logger" id="apidoc.module.cliff.logger">module cliff.logger</a></h1>
+
+
+
+
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.logger.data" id="apidoc.element.cliff.logger.data">
+        function <span class="apidocSignatureSpan">cliff.logger.</span>data
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">data = function (msg) {
+  // build argument list (level, msg, ... [string interpolate], [{metadata}], [callback])
+  var args = [level].concat(Array.prototype.slice.call(arguments));
+  target.log.apply(target, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.logger.debug" id="apidoc.element.cliff.logger.debug">
+        function <span class="apidocSignatureSpan">cliff.logger.</span>debug
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debug = function (msg) {
+  // build argument list (level, msg, ... [string interpolate], [{metadata}], [callback])
+  var args = [level].concat(Array.prototype.slice.call(arguments));
+  target.log.apply(target, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.logger.error" id="apidoc.element.cliff.logger.error">
+        function <span class="apidocSignatureSpan">cliff.logger.</span>error
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (msg) {
+  // build argument list (level, msg, ... [string interpolate], [{metadata}], [callback])
+  var args = [level].concat(Array.prototype.slice.call(arguments));
+  target.log.apply(target, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.logger.help" id="apidoc.element.cliff.logger.help">
+        function <span class="apidocSignatureSpan">cliff.logger.</span>help
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">help = function (msg) {
+  // build argument list (level, msg, ... [string interpolate], [{metadata}], [callback])
+  var args = [level].concat(Array.prototype.slice.call(arguments));
+  target.log.apply(target, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.logger.info" id="apidoc.element.cliff.logger.info">
+        function <span class="apidocSignatureSpan">cliff.logger.</span>info
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">info = function (msg) {
+  // build argument list (level, msg, ... [string interpolate], [{metadata}], [callback])
+  var args = [level].concat(Array.prototype.slice.call(arguments));
+  target.log.apply(target, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.logger.input" id="apidoc.element.cliff.logger.input">
+        function <span class="apidocSignatureSpan">cliff.logger.</span>input
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">input = function (msg) {
+  // build argument list (level, msg, ... [string interpolate], [{metadata}], [callback])
+  var args = [level].concat(Array.prototype.slice.call(arguments));
+  target.log.apply(target, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.logger.prompt" id="apidoc.element.cliff.logger.prompt">
+        function <span class="apidocSignatureSpan">cliff.logger.</span>prompt
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prompt = function (msg) {
+  // build argument list (level, msg, ... [string interpolate], [{metadata}], [callback])
+  var args = [level].concat(Array.prototype.slice.call(arguments));
+  target.log.apply(target, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.logger.silly" id="apidoc.element.cliff.logger.silly">
+        function <span class="apidocSignatureSpan">cliff.logger.</span>silly
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">silly = function (msg) {
+  // build argument list (level, msg, ... [string interpolate], [{metadata}], [callback])
+  var args = [level].concat(Array.prototype.slice.call(arguments));
+  target.log.apply(target, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.logger.verbose" id="apidoc.element.cliff.logger.verbose">
+        function <span class="apidocSignatureSpan">cliff.logger.</span>verbose
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">verbose = function (msg) {
+  // build argument list (level, msg, ... [string interpolate], [{metadata}], [callback])
+  var args = [level].concat(Array.prototype.slice.call(arguments));
+  target.log.apply(target, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cliff.logger.warn" id="apidoc.element.cliff.logger.warn">
+        function <span class="apidocSignatureSpan">cliff.logger.</span>warn
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warn = function (msg) {
+  // build argument list (level, msg, ... [string interpolate], [{metadata}], [callback])
+  var args = [level].concat(Array.prototype.slice.call(arguments));
+  target.log.apply(target, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
